@@ -1,0 +1,228 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+	min-width: 320px;
+
+}
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	padding: 20px;
+}
+h1{
+	font-weight: 400;
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 0 10px;
+	color: #0050a4;
+}
+h1 span{
+	color:#ef4135 ;
+}
+.biografia{
+	color: #333;
+	text transform: lowercase;
+}
+.biografia::after{
+		content: "+"
+		}
+nav ul{
+	list-style: none;
+	display: flex;
+}
+nav li{
+	flex-grow: 1;
+}
+nav a{
+	display: block;	
+	height: 100vh;
+	text-decoration: none;
+	color: white;
+	text-transform: lowercase;
+	font-weight: 500;
+	font-size: 8em;
+	background: url("../img/blanco.jpg") no-repeat center;
+	background-size: cover;
+	position: relative;
+}
+nav li:nth-child(1) a{
+	background-image: url("../img/azul.jpg");
+	color: #0050a4;
+}
+nav li:nth-child(3) a{
+	background-image: url("../img/rojo.jpg");
+	color: #ef4135;
+}
+nav a span{
+	position: absolute;
+	right: 40px;
+	bottom: 40px;
+}
+/* pàginas internas */
+
+.seccion{
+	min-height: 100vh;
+	background-image: linear-gradient(to top, #999, #eee);
+
+}
+.azul{
+	background-image: linear-gradient(to top, #003670, #0050a4);
+}
+.rojo{
+	background-image: linear-gradient(to top, #bd332a, #ff4135);
+}
+.seccion header{
+	position: static;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.seccion nav{
+	width: 400px;
+}
+
+.seccion nav li a{
+	display: inline;
+	font-size: 1em;
+	color: #333;
+	background: none;
+}
+.azul nav li a,
+.rojo nav li a{
+	color: #eee;
+}
+.seccion h1 a{
+	text-decoration: none;
+	color: #0050a4;
+
+}
+.seccion nav li:last-child a::after{
+		content: "+"
+}
+.contenido{
+	width: 500px;
+	margin: 0 auto;
+	padding-bottom: 100px;
+}
+.contenido h2{
+	font-weight: 500;
+	color: white;
+	font-size: 12em ;
+	position: relative;
+	top: 100px;
+	left: -100px;
+	z-index: -1;
+}
+.azul h2{
+	color: #003670;
+}
+.rojo h2{
+	color: #bd332a;
+}
+.contenido p{
+	color: #333;
+	margin-top: 10px;
+}
+.azul p,
+.rojo p{
+	color: #eee;
+}
+.contenido img{
+	display: block;
+	background-color: white;
+	padding: 10px;
+	border: 1px solid #444;
+	width: calc(100% - 22px);
+	margin-top: 10px;
+}
+
+
+/* responsive */	
+
+@media screen and (max-width:1200px){
+	nav a{ 
+	font-size: 6em;
+	 }
+}
+
+@media screen and (max-width:900px){
+	nav ul{
+		display: block;
+	}
+	nav a {
+		height: calc(100vh / 3);
+		text-shadow: 5px 5px 8px rgba(0 0 0 / 27%);
+	}
+	nav li:nth-child(1) a{
+		background-position: center -70px;
+	}
+	nav li:nth-child(3) a{
+		background-position: center -105px;
+	}
+	/* pàginas internas */
+
+	.seccion header{
+		display: block;
+	}
+	.seccion h1{
+		display: inline-block;
+	}
+	.seccion nav{
+		margin-top: 20px;
+	}
+	.seccion nav ul{
+		display: flex;
+	}
+	.seccion nav a {
+		text-shadow: none;
+	}
+	.contenido h2{
+		left: -50px;
+	}
+
+
+}
+
+@media screen and (max-width: 500px){
+	h1{
+		font-size: 1.6em;
+	}
+	h1 span{
+		display: block;
+	}
+	.biografia{
+		display: none;
+	}
+	nav a{
+		font-size: 4em;
+	}
+	nav a span{
+		bottom: 20px;
+	}
+	nav li:nth-child(1) a{
+		background-position: center 0px;
+	}
+	nav li:nth-child(3) a{
+		background-position: center -30px;
+	}
+
+	/* pàginas internas */
+
+	.seccion nav{
+		width: 100%;
+	}
+	.contenido{
+		width: 90%;
+	}
+	.contenido h2{
+		position: static;
+		font-size: 2em;
+	}
+
+
+}
